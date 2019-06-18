@@ -1,0 +1,133 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="mpython_init_wifi" id="_GhF-Kt:D5.L{~|?]W?b" x="-571" y="-517">
+    <value name="ssid">
+      <shadow type="text" id="G},+,o/L5)SGK1~I~3_:">
+        <field name="TEXT">小米路由器makerspace</field>
+      </shadow>
+    </value>
+    <value name="password">
+      <shadow type="text" id="`H.[k);gpC9mKLP58/~h">
+        <field name="TEXT">m@kersp@ce</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="yeelight_search" id="#!/$bhI)ieBqz2_5B@^7">
+        <next>
+          <block type="yeelight_init" id="bKnzOTU_Ggbus28D*lFH">
+            <field name="yeelight_name">bulb</field>
+            <value name="order">
+              <shadow type="math_number" id="AtC-wF8+ZZ`a*d#$^#8m">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="controls_repeat_forever" id="Lxy!k9W](QVj]bVnHQQ.">
+                <statement name="DO">
+                  <block type="mpython_display_fill" id="ly9Vj#]5p2o/;[BV83EQ">
+                    <field name="display_fill">fill(0)</field>
+                    <next>
+                      <block type="mpython_display_DispChar" id="7*3*A!9jo07mIsE95.i7">
+                        <field name="TEXTMODE">1</field>
+                        <value name="x">
+                          <shadow type="math_number" id="BbEbZI3T`lf:p~mt^hm;">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="y">
+                          <shadow type="math_number" id="jyeVlD-U`}uiu|/4Ib_Z">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="message">
+                          <shadow type="text" id="xQv$lXzyT0?}yd/WXk8Z">
+                            <field name="TEXT">当前光线值</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="mpython_display_DispChar" id="Pjx./B{bf5Nz73j{fG^G">
+                            <field name="TEXTMODE">1</field>
+                            <value name="x">
+                              <shadow type="math_number" id="skXx;dK9Ek4;QTh!V1DX">
+                                <field name="NUM">65</field>
+                              </shadow>
+                            </value>
+                            <value name="y">
+                              <shadow type="math_number" id="2ITH=Mtky-x]L#R|Au4b">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="message">
+                              <shadow type="text" id="iLGZUOmyGyv?E[xA|Q0J">
+                                <field name="TEXT">Hello, world!</field>
+                              </shadow>
+                              <block type="text_join" id="=q9,[./C+FdFq;B8#_y}">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                  <block type="mpython_read_light" id="_Wp0})(Xs+T~V@%U~97f"></block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="mpython_display_Show" id="cP3ZYN_n4)nYL2ZVK#Ol">
+                                <next>
+                                  <block type="controls_if" id="S%g~k,5%l2vO]]=Vj?+r">
+                                    <value name="IF0">
+                                      <block type="logic_compare" id="NF*c*NNeW*}8$U;]IM}:">
+                                        <field name="OP">LT</field>
+                                        <value name="A">
+                                          <block type="mpython_read_light" id="MKy^#v_~md[WNJiz@kST"></block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="n7-=8kMfghw46_~5ZD8R">
+                                            <field name="NUM">2000</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO0">
+                                      <block type="yeelight_switch_state" id=";vA3O9N)zH/IYUEO7m@L">
+                                        <field name="state">turn_on()</field>
+                                        <field name="yeelight_name">bulb</field>
+                                      </block>
+                                    </statement>
+                                    <next>
+                                      <block type="controls_if" id="4SPbe3P}z?n;5dSQ+0V,">
+                                        <value name="IF0">
+                                          <block type="logic_compare" id="sm65~i[,2!c_gd6FpW:A">
+                                            <field name="OP">GT</field>
+                                            <value name="A">
+                                              <block type="mpython_read_light" id="}c$Z5.cTcwKlzAH}n7-A"></block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="O(In}kxPQp*GsNoYfcjx">
+                                                <field name="NUM">2000</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO0">
+                                          <block type="yeelight_switch_state" id="oa%MD$USsH{dIu%u4%Uh">
+                                            <field name="state">turn_on()</field>
+                                            <field name="yeelight_name">bulb</field>
+                                          </block>
+                                        </statement>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

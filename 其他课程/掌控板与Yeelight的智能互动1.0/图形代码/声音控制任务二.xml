@@ -1,0 +1,229 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="mpython_init_wifi" id="_GhF-Kt:D5.L{~|?]W?b" x="-867" y="-142">
+    <value name="ssid">
+      <shadow type="text" id="G},+,o/L5)SGK1~I~3_:">
+        <field name="TEXT">小米路由器makerspace</field>
+      </shadow>
+    </value>
+    <value name="password">
+      <shadow type="text" id="`H.[k);gpC9mKLP58/~h">
+        <field name="TEXT">m@kersp@ce</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="yeelight_search" id="#!/$bhI)ieBqz2_5B@^7">
+        <next>
+          <block type="yeelight_init" id="bKnzOTU_Ggbus28D*lFH">
+            <field name="yeelight_name">bulb</field>
+            <value name="order">
+              <shadow type="math_number" id="AtC-wF8+ZZ`a*d#$^#8m">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="yeelight_switch_state" id="ei:xewvK7lXJWDcxZaI@">
+                <field name="state">turn_on()</field>
+                <field name="yeelight_name">bulb</field>
+                <next>
+                  <block type="controls_if" id="g`*?~kmSCdz4JdI/WhuL">
+                    <value name="IF0">
+                      <block type="logic_operation" id="/2N(cxVZ2mY7Jz$(~[wT">
+                        <field name="OP">AND</field>
+                        <value name="A">
+                          <block type="logic_compare" id="qD/?qenGZ6Y^dW^LLq$3">
+                            <field name="OP">GT</field>
+                            <value name="A">
+                              <block type="mpython_read_sound" id="f?!-^[y2lmeJIEipI(=g"></block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="OdAD[PT]0{H8VQT.`m98">
+                                <field name="NUM">2000</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="logic_compare" id="1pg:|J74THl5?WvTc0U@">
+                            <field name="OP">LT</field>
+                            <value name="A">
+                              <block type="mpython_read_sound" id="eZ/3T[DL{r~[0ij*9~ln"></block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="5yJSQLghsGd69}5J@]JY">
+                                <field name="NUM">3000</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="yeelight_set_rgb" id="_hEXOBn*PCnnjK$jH10y">
+                        <field name="yeelight_name">bulb</field>
+                        <value name="r">
+                          <shadow type="math_number" id="k4kxNm%W4C@(R_rbcwbH">
+                            <field name="NUM">255</field>
+                          </shadow>
+                        </value>
+                        <value name="g">
+                          <shadow type="math_number" id="=]Rm2R;E`+2at8D.rm!v">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="b">
+                          <shadow type="math_number" id="Y6s5n%{T]hhsV?;Xwc)=">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="yeelight_set_brightness" id="N6GCGLLir`_4cRw5C~ck">
+                            <field name="yeelight_name">bulb</field>
+                            <value name="brightness">
+                              <shadow type="zero_to_100" id=",0;!02Cy+z{iM_P4:Db3">
+                                <field name="count">0</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="controls_if" id=")Ke^_tE@l#8`PyUS1/uh">
+                        <value name="IF0">
+                          <block type="logic_operation" id="ZLnYOo5Y62zoEXKo4To1">
+                            <field name="OP">AND</field>
+                            <value name="A">
+                              <block type="logic_compare" id="iPsmOxc@*m%,}1Mnu`=4">
+                                <field name="OP">GT</field>
+                                <value name="A">
+                                  <block type="mpython_read_sound" id="1-Et1;1Z(=Cz3*U:^P6|"></block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="1aUptqo%e[O4|rZp82n.">
+                                    <field name="NUM">3000</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="logic_compare" id="=O$=S]gEeI|:G}LtbU?Q">
+                                <field name="OP">LT</field>
+                                <value name="A">
+                                  <block type="mpython_read_sound" id="quyVle(yu]!;t`g50#+#"></block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="J[/=?3_aKaN,W5#1y@3^">
+                                    <field name="NUM">4000</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="yeelight_set_rgb" id="0A4n:gS!hi4M1;HI=}pO">
+                            <field name="yeelight_name">bulb</field>
+                            <value name="r">
+                              <shadow type="math_number" id="5$SGObn4g`s%UBn4b[V8">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="g">
+                              <shadow type="math_number" id="=()]1oeP@=ApOYPE5nC,">
+                                <field name="NUM">255</field>
+                              </shadow>
+                            </value>
+                            <value name="b">
+                              <shadow type="math_number" id="Kd7I5F3^~O;pMe*9MmT,">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="yeelight_set_brightness" id="MpVEoLz3cjU4|*.to/)n">
+                                <field name="yeelight_name">bulb</field>
+                                <value name="brightness">
+                                  <shadow type="zero_to_100" id="cC/ro6%t%!yEL9.Y,m[L">
+                                    <field name="count">50</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="controls_if" id="@|ZX72s7Et7$jkC@A~JH">
+                            <value name="IF0">
+                              <block type="logic_operation" id="~v6RByp@h_78#Mmc`Fl?">
+                                <field name="OP">OR</field>
+                                <value name="A">
+                                  <block type="logic_compare" id="gx4=h*WvqKP@)o,yh6g|">
+                                    <field name="OP">GT</field>
+                                    <value name="A">
+                                      <block type="mpython_read_sound" id="IUG::Gt|G3vtq26KV9tc"></block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="XO!q#1RSMsxBAb;sX@o!">
+                                        <field name="NUM">4000</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="logic_compare" id="JcuWXI6OVM$cK-Wsv/e#">
+                                    <field name="OP">LT</field>
+                                    <value name="A">
+                                      <block type="mpython_read_sound" id="FfPrgsL9acHO3EL_PEIg"></block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="!B%0OzmY@f/IIR:pA|LZ">
+                                        <field name="NUM">5000</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="yeelight_set_rgb" id="Z)X}mk3z,5r!H23hCQT(">
+                                <field name="yeelight_name">bulb</field>
+                                <value name="r">
+                                  <shadow type="math_number" id="NDvGs73a2y1-cE#;:$v^">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                                <value name="g">
+                                  <shadow type="math_number" id=":=}Z:_sCN=nR%CIbF%3z">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                                <value name="b">
+                                  <shadow type="math_number" id="Bm()e:%$$M/G++n|]`KX">
+                                    <field name="NUM">255</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="yeelight_set_brightness" id="}xzxSLXi@(#sMq]fs}#2">
+                                    <field name="yeelight_name">bulb</field>
+                                    <value name="brightness">
+                                      <shadow type="zero_to_100" id="@%cyV~nLwCIq6d7$l^}u">
+                                        <field name="count">100</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

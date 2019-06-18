@@ -1,0 +1,188 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="mpython_init_wifi" id="_GhF-Kt:D5.L{~|?]W?b" x="-1085" y="-508">
+    <value name="ssid">
+      <shadow type="text" id="G},+,o/L5)SGK1~I~3_:">
+        <field name="TEXT">小米路由器makerspace</field>
+      </shadow>
+    </value>
+    <value name="password">
+      <shadow type="text" id="`H.[k);gpC9mKLP58/~h">
+        <field name="TEXT">m@kersp@ce</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="yeelight_search" id="#!/$bhI)ieBqz2_5B@^7">
+        <next>
+          <block type="yeelight_init" id="bKnzOTU_Ggbus28D*lFH">
+            <field name="yeelight_name">bulb</field>
+            <value name="order">
+              <shadow type="math_number" id="AtC-wF8+ZZ`a*d#$^#8m">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="yeelight_switch_state" id="ei:xewvK7lXJWDcxZaI@">
+                <field name="state">turn_on()</field>
+                <field name="yeelight_name">bulb</field>
+                <next>
+                  <block type="controls_repeat_forever" id="~SMWGwsIW|9@}A;zV}mz">
+                    <statement name="DO">
+                      <block type="mpython_Interrupt_AB" id="G`bziSvbg;$biGIac_7A">
+                        <field name="button">button_a</field>
+                        <field name="action">down</field>
+                        <statement name="DO">
+                          <block type="yeelight_set_rgb" id="|^cHh%b7i|J~V%pD=R,B">
+                            <field name="yeelight_name">bulb</field>
+                            <value name="r">
+                              <shadow type="math_number" id=".Nq7%2Wp}2=iw=@HceEM">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="math_arithmetic" id="WMK%msgzM,~QC/%vol,.">
+                                <field name="OP">ADD</field>
+                                <value name="A">
+                                  <shadow type="math_number" id="w3$~5/(;b:25JX|ug{tL">
+                                    <field name="NUM">20</field>
+                                  </shadow>
+                                </value>
+                                <value name="B">
+                                  <shadow type="math_number" id="yQBACwv0e$+_iOfDF3wD">
+                                    <field name="NUM">30</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="g">
+                              <shadow type="math_number" id="~#kr0F/}G#J+=FpNpD5Q">
+                                <field name="NUM">255</field>
+                              </shadow>
+                              <block type="math_arithmetic" id="2r-|NhD6C[vC5S01]mfK">
+                                <field name="OP">ADD</field>
+                                <value name="A">
+                                  <shadow type="math_number" id="n6NJwT{oJ=c@oz=MkHu.">
+                                    <field name="NUM">150</field>
+                                  </shadow>
+                                </value>
+                                <value name="B">
+                                  <shadow type="math_number" id="RZAQqNNnY,BL8R,^=-:2">
+                                    <field name="NUM">20</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="b">
+                              <shadow type="math_number" id="cZj3ex;~|5W@?.@#g3xV">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="math_arithmetic" id="t2$C,=PNy,0)j[R%=o@G">
+                                <field name="OP">MINUS</field>
+                                <value name="A">
+                                  <shadow type="math_number" id="^,I*}N^wa869ueLrihQ2">
+                                    <field name="NUM">255</field>
+                                  </shadow>
+                                </value>
+                                <value name="B">
+                                  <shadow type="math_number" id=",1C*!}9@,t9kL_vh?6?_">
+                                    <field name="NUM">30</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="yeelight_set_brightness" id="*o^U9}{1WK)%2Pj.a4;F">
+                                <field name="yeelight_name">bulb</field>
+                                <value name="brightness">
+                                  <shadow type="zero_to_100" id="nEDQsGxDbdc8F9L}O):r">
+                                    <field name="count">0</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="mpython_Interrupt_AB" id="eOAeS@20K=FX-R=y-vIQ">
+                            <field name="button">button_b</field>
+                            <field name="action">down</field>
+                            <statement name="DO">
+                              <block type="yeelight_set_rgb" id="N/:uBDDzpKjYF)qf*jqM">
+                                <field name="yeelight_name">bulb</field>
+                                <value name="r">
+                                  <shadow type="math_number" id=".Nq7%2Wp}2=iw=@HceEM">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="math_arithmetic" id="!rSY{iIiJl-$y2wTX[3_">
+                                    <field name="OP">MINUS</field>
+                                    <value name="A">
+                                      <shadow type="math_number" id="!(EoqiMVPymHsD1wfs]-">
+                                        <field name="NUM">255</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="B">
+                                      <shadow type="math_number" id="YJ@h%_:g^~wscbc~MYm^">
+                                        <field name="NUM">30</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="g">
+                                  <shadow type="math_number" id="~#kr0F/}G#J+=FpNpD5Q">
+                                    <field name="NUM">255</field>
+                                  </shadow>
+                                  <block type="math_arithmetic" id="K.VeYR8#sN(EaNs5[g$(">
+                                    <field name="OP">ADD</field>
+                                    <value name="A">
+                                      <shadow type="math_number" id="D7H)8Ffq4kJ?a0!i`dJ{">
+                                        <field name="NUM">0</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="B">
+                                      <shadow type="math_number" id="H~PESoQg#GQ:fI6f{Tz6">
+                                        <field name="NUM">50</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="b">
+                                  <shadow type="math_number" id="cZj3ex;~|5W@?.@#g3xV">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="math_arithmetic" id="dagbsJ0nQG92W1t7uU7v">
+                                    <field name="OP">MINUS</field>
+                                    <value name="A">
+                                      <shadow type="math_number" id="+dvJ:$:u#[XFn]W;-zw-">
+                                        <field name="NUM">0</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="B">
+                                      <shadow type="math_number" id="qGqfcdiA![?LS=lTL.h[">
+                                        <field name="NUM">50</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="yeelight_set_brightness" id=";cvbHfcb$;rs$HO6o.th">
+                                    <field name="yeelight_name">bulb</field>
+                                    <value name="brightness">
+                                      <shadow type="zero_to_100" id="ghGVEO7kigVQoV%wjkYP">
+                                        <field name="count">0</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

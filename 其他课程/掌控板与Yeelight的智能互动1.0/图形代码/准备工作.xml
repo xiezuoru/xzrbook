@@ -1,0 +1,74 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="mpython_init_wifi" id="7?ev_vVa7E0*^YHhq3q;" x="-227" y="-383">
+    <value name="ssid">
+      <shadow type="text" id="r|xMx?6w}WpP:l)SN%89">
+        <field name="TEXT">小米路由器makerspace</field>
+      </shadow>
+    </value>
+    <value name="password">
+      <shadow type="text" id="#jpV`CU0dC1.cGa@]/?4">
+        <field name="TEXT">m@kersp@ce</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="yeelight_search" id="qLcszUL~A,d6wa|xEoXx">
+        <next>
+          <block type="mpython_display_fill" id="b%/P|`K/!d,u1Cn{hXls">
+            <field name="display_fill">fill(0)</field>
+            <next>
+              <block type="mpython_display_DispChar" id="!,8]YmBu]=DyEE-MFJ[8">
+                <field name="TEXTMODE">1</field>
+                <value name="x">
+                  <shadow type="math_number" id="V)T0KEJDX-aQOD3u:#P^">
+                    <field name="NUM">5</field>
+                  </shadow>
+                </value>
+                <value name="y">
+                  <shadow type="math_number" id="z:3[__@HJevNrH;]qvn5">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="message">
+                  <shadow type="text" id="0Uw=xq+L3KG3=ClcxNhx">
+                    <field name="TEXT">Hello, world!</field>
+                  </shadow>
+                  <block type="mpython_WiFi_config" id="nFQvstHO?yAu^*|grFmS">
+                    <field name="WiFi_config">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="mpython_display_DispChar" id="pN^e;7]Ph=@cMD@~(P|W">
+                    <field name="TEXTMODE">1</field>
+                    <value name="x">
+                      <shadow type="math_number" id="|Gsg5gxZ!KmNKb.(#Y1R">
+                        <field name="NUM">5</field>
+                      </shadow>
+                    </value>
+                    <value name="y">
+                      <shadow type="math_number" id="/FTwq!k$9hhO|4)e0c7^">
+                        <field name="NUM">5</field>
+                      </shadow>
+                    </value>
+                    <value name="message">
+                      <shadow type="text" id=",Rg|VYLztHK2/e~fdX~q">
+                        <field name="TEXT">Hello, world!</field>
+                      </shadow>
+                      <block type="yeelight_config" id="_#j^r_^t1$gXO%~XM;1r">
+                        <field name="config">['ip']</field>
+                        <value name="order">
+                          <shadow type="math_number" id="1Bq]NvEP:Q.L[XS.-Rf_">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

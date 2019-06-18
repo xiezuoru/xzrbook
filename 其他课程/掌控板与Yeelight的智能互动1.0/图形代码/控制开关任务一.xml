@@ -1,0 +1,128 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="mpython_init_wifi" id="BeO$c=}qlf8AAV;]Vao0" x="-324" y="-512">
+    <value name="ssid">
+      <shadow type="text" id="SuS@6/XY-Rc7A0E1F?q^">
+        <field name="TEXT">小米手机</field>
+      </shadow>
+    </value>
+    <value name="password">
+      <shadow type="text" id="p;,Itkxb,E/=%SBm#AWn">
+        <field name="TEXT">111222333</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="yeelight_search" id="ngRu6XF.`:z%Wg5MF.0[">
+        <next>
+          <block type="yeelight_init" id="E6C|Np9p-tD-4cJy9%*f">
+            <field name="yeelight_name">bulb</field>
+            <value name="order">
+              <shadow type="math_number" id="i4g35:eL(VSVPjOHC?BB">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="mpython_Interrupt_AB" id="DVSRZYfY,F=K5#.NL~n6">
+                <field name="button">button_a</field>
+                <field name="action">down</field>
+                <statement name="DO">
+                  <block type="mpython_display_fill" id="sdw++gull4K1d1;N@0x5">
+                    <field name="display_fill">fill(0)</field>
+                    <next>
+                      <block type="mpython_display_DispChar" id="R^KE0K]:U/h[.qJH}|CL">
+                        <field name="TEXTMODE">1</field>
+                        <value name="x">
+                          <shadow type="math_number" id="xAArM69)2O[7M|F[i[cV">
+                            <field name="NUM">5</field>
+                          </shadow>
+                        </value>
+                        <value name="y">
+                          <shadow type="math_number" id="lH*qH(?R](~8(_Be7p2*">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="message">
+                          <shadow type="text" id="*EpP+Dbe#%A`6Tv8W(gs">
+                            <field name="TEXT">A打开</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="yeelight_switch_state" id="Q6^e/51BurjOb2uc2uSh">
+                            <field name="state">turn_on()</field>
+                            <field name="yeelight_name">bulb</field>
+                            <next>
+                              <block type="mpython_sleep_ms" id="KmErTLqy7gzQlTt@a6-+">
+                                <field name="ms_us">s</field>
+                                <value name="duration">
+                                  <shadow type="math_number" id="uzGjs1_[9w0dBWS[6*.;">
+                                    <field name="NUM">2</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="mpython_display_Show" id=":10TM]1pg?oq,v`4JtCy"></block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="mpython_Interrupt_AB" id="XWQ{/@@[?{a:6mRle^j#">
+                    <field name="button">button_b</field>
+                    <field name="action">down</field>
+                    <statement name="DO">
+                      <block type="mpython_display_fill" id="!r2A?{mL(Bo8XlqBzePC">
+                        <field name="display_fill">fill(0)</field>
+                        <next>
+                          <block type="mpython_display_DispChar" id="khv(WJX9/V;#QgoPU9-a">
+                            <field name="TEXTMODE">1</field>
+                            <value name="x">
+                              <shadow type="math_number" id="uoCntIO?j$i)vU`^hr}s">
+                                <field name="NUM">10</field>
+                              </shadow>
+                            </value>
+                            <value name="y">
+                              <shadow type="math_number" id="X(rck~hW@u8/Pj^~P(]C">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="message">
+                              <shadow type="text" id="r1gJ`Xy}=WI?zvP`JRU(">
+                                <field name="TEXT">B关闭</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="yeelight_switch_state" id="-RGRGRH%vkqmD.=;DAMe">
+                                <field name="state">turn_off()</field>
+                                <field name="yeelight_name">bulb</field>
+                                <next>
+                                  <block type="mpython_sleep_ms" id=")?,x|:7FGF*ny^ak^aIi">
+                                    <field name="ms_us">s</field>
+                                    <value name="duration">
+                                      <shadow type="math_number" id="0sE3RQvCqPF,v=+xbi`3">
+                                        <field name="NUM">2</field>
+                                      </shadow>
+                                    </value>
+                                    <next>
+                                      <block type="mpython_display_Show" id="[cnpY$4oZ)muS#H0_vhp"></block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,353 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="mpython_init_wifi" id="*^_pd3{|e{253Xz5n:cS" x="-293" y="-719">
+    <value name="ssid">
+      <shadow type="text" id="fEPa}92_`?Vg#0l^c@$d">
+        <field name="TEXT">小米手机</field>
+      </shadow>
+    </value>
+    <value name="password">
+      <shadow type="text" id="(%YU:M02N1SUKIxp{?Xz">
+        <field name="TEXT">111222333</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="yeelight_search" id="MqZeUYt`PpQrgv|_pjCk">
+        <next>
+          <block type="yeelight_init" id="XmxK,o$P=G|.BQNXe3_k">
+            <field name="yeelight_name">bulb</field>
+            <value name="order">
+              <shadow type="math_number" id="z0J%.0X9ge]-7,_+Y28z">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="mpython_get_post" id="l`UF}Nu;}eY!Uf(m3pmk">
+                <field name="get_post">get</field>
+                <value name="url">
+                  <shadow type="text" id="qnr?OM3y_[C,07%0CyS,">
+                    <field name="TEXT">http://www.weather.com.cn/data/cityinfo/101210701.html</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="variables_set" id="UNms}1B9VxHHguV*.n6j">
+                    <field name="VAR">r</field>
+                    <value name="VALUE">
+                      <shadow type="math_number" id="~Xi56?-(K*-.Rll;qt{*">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="mpython_ujson_loads" id="cMyXgpaifdMAf4l2(/-]">
+                        <value name="data">
+                          <shadow type="text">
+                            <field name="TEXT">{"Age":8}</field>
+                          </shadow>
+                          <block type="mpython_response" id="jz!_h.$6?2]%3KkPO+S;">
+                            <field name="response">text</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="UV;dP)mj{hR-[Ch5Y3:n">
+                        <field name="VAR">tianqi</field>
+                        <value name="VALUE">
+                          <shadow type="math_number" id="UxLh?6Vxg=pL)vJ5ig,E">
+                            <field name="NUM">0</field>
+                          </shadow>
+                          <block type="dict_key_value" id="YJ]-0N[N(kG#d(t)P4kn">
+                            <value name="dict_name">
+                              <shadow type="text_dict" id="o%gl4|Y!./t4wm~BYQ/#">
+                                <field name="TEXT"></field>
+                              </shadow>
+                              <block type="variables_get" id="k54f$^n#:M?C`,}D8TZk">
+                                <field name="VAR">r</field>
+                              </block>
+                            </value>
+                            <value name="dict_items">
+                              <shadow type="text" id="0vwA;ZTa?:3:;mu6}Aya">
+                                <field name="TEXT">weatherinfo</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="mpython_display_DispChar_5lines" id="Ic_Jnf(9mV?BkD+7A]Y;">
+                            <field name="TEXTMODE">1</field>
+                            <value name="DispChar_5lines">
+                              <shadow type="mpython_4_lines" id="D*Jp~}986_;7DE.}#JBs">
+                                <field name="mpython_4_lines">0</field>
+                              </shadow>
+                            </value>
+                            <value name="message">
+                              <shadow type="text" id="/ae;%m2XkYEWG)C5(^QE">
+                                <field name="TEXT">地区： </field>
+                              </shadow>
+                              <block type="text_format" id="Kc):T6E|jZcie*)QbiP|">
+                                <value name="FORMAT">
+                                  <shadow type="text" id="Hhu$vi:JTe4!p3^}~zw;">
+                                    <field name="TEXT">地区: %s</field>
+                                  </shadow>
+                                </value>
+                                <value name="CONTENT">
+                                  <block type="dict_key_value" id="G9QKb$PqzUW@,Q}lS.K^">
+                                    <value name="dict_name">
+                                      <shadow type="text_dict" id=";M~yxil:;_5S+EB:0(yW">
+                                        <field name="TEXT"></field>
+                                      </shadow>
+                                      <block type="variables_get" id="1,hpDEG8Aej5nuG;p~P)">
+                                        <field name="VAR">tianqi</field>
+                                      </block>
+                                    </value>
+                                    <value name="dict_items">
+                                      <shadow type="text" id="n)-`|7Zvs*O;cKbFPgb(">
+                                        <field name="TEXT">city</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="mpython_display_DispChar_5lines" id=",i,WDz`11fJ}AS)9KE_-">
+                                <field name="TEXTMODE">1</field>
+                                <value name="DispChar_5lines">
+                                  <shadow type="mpython_4_lines" id="r?pduEPO6!@2a3txp25k">
+                                    <field name="mpython_4_lines">16</field>
+                                  </shadow>
+                                </value>
+                                <value name="message">
+                                  <shadow type="text" id="/ae;%m2XkYEWG)C5(^QE">
+                                    <field name="TEXT">地区： </field>
+                                  </shadow>
+                                  <block type="text_format" id="hF;=x0}d-pbZ6sm,l`u|">
+                                    <value name="FORMAT">
+                                      <shadow type="text" id="eQaWRsKeU37{X8U^mgEP">
+                                        <field name="TEXT">天气: %s</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="CONTENT">
+                                      <block type="dict_key_value" id="^3+5R)u|GWNP$~U]T-~g">
+                                        <value name="dict_name">
+                                          <shadow type="text_dict" id=";M~yxil:;_5S+EB:0(yW">
+                                            <field name="TEXT"></field>
+                                          </shadow>
+                                          <block type="variables_get" id="H4iOb+I|O:z2O}3ESj#o">
+                                            <field name="VAR">tianqi</field>
+                                          </block>
+                                        </value>
+                                        <value name="dict_items">
+                                          <shadow type="text" id="}?KyC|71aZ)?QaBj*}na">
+                                            <field name="TEXT">weather</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="mpython_display_Show" id="bfxacIG+C$0#mXAX~y$t">
+                                    <next>
+                                      <block type="controls_if" id="w?Vn;EsDIb`TOn/UnR]4">
+                                        <value name="IF0">
+                                          <block type="logic_compare" id="^RRyj{m#W(,tyA+wOtX|">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="dict_key_value" id="EHZGoZe3Nhl+IK_#LyU~">
+                                                <value name="dict_name">
+                                                  <shadow type="text_dict" id=";M~yxil:;_5S+EB:0(yW">
+                                                    <field name="TEXT"></field>
+                                                  </shadow>
+                                                  <block type="variables_get" id="hy{3Kefc-^t7SP+Elh}y">
+                                                    <field name="VAR">tianqi</field>
+                                                  </block>
+                                                </value>
+                                                <value name="dict_items">
+                                                  <shadow type="text" id="MSvW?^X:o+.FOq50}_Gb">
+                                                    <field name="TEXT">weather</field>
+                                                  </shadow>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="text" id="5o{H;8*|{me9/g*X?00;">
+                                                <field name="TEXT">大到暴雨</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO0">
+                                          <block type="yeelight_set_rgb_color" id="[5q4oyZ1(V!,#o:ku28:">
+                                            <field name="yeelight_name">bulb</field>
+                                            <field name="COLOUR">#33ff33</field>
+                                            <next>
+                                              <block type="yeelight_set_brightness" id=";;kdQbkI!t|~v}?XyxU7">
+                                                <field name="yeelight_name">bulb</field>
+                                                <value name="brightness">
+                                                  <shadow type="zero_to_100" id="]pnEU%k4=CR!2dY4(^=*">
+                                                    <field name="count">0</field>
+                                                  </shadow>
+                                                </value>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="controls_if" id="fayh2O}*,`=pbYL6w_`K">
+                                            <value name="IF0">
+                                              <block type="logic_compare" id="-l@kMj(Uffn-:X|6jqS4">
+                                                <field name="OP">EQ</field>
+                                                <value name="A">
+                                                  <block type="dict_key_value" id="?XZx[.!/*bs}N.G,YeSf">
+                                                    <value name="dict_name">
+                                                      <shadow type="text_dict" id=";M~yxil:;_5S+EB:0(yW">
+                                                        <field name="TEXT"></field>
+                                                      </shadow>
+                                                      <block type="variables_get" id="F]p;bHi.2.MD:/3FJ3gN">
+                                                        <field name="VAR">tianqi</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="dict_items">
+                                                      <shadow type="text" id="s@}_x{a,jR~_jTcp_u.z">
+                                                        <field name="TEXT">weather</field>
+                                                      </shadow>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="text" id="YcjG.d_d)o:/9|.E*gvp">
+                                                    <field name="TEXT">晴天</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <statement name="DO0">
+                                              <block type="yeelight_set_rgb_color" id="=sJoDb#B-B|Ys;Mi)f/W">
+                                                <field name="yeelight_name">bulb</field>
+                                                <field name="COLOUR">#ccccff</field>
+                                                <next>
+                                                  <block type="yeelight_set_brightness" id="4fnjERqJ:IHQl=f=/zw;">
+                                                    <field name="yeelight_name">bulb</field>
+                                                    <value name="brightness">
+                                                      <shadow type="zero_to_100" id="n.Bma3r#pbx,Z=2q`i26">
+                                                        <field name="count">0</field>
+                                                      </shadow>
+                                                    </value>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </statement>
+                                            <next>
+                                              <block type="controls_if" id="odXdTN/R!rOw}CxHU:ou">
+                                                <value name="IF0">
+                                                  <block type="logic_compare" id="y|*P%:Qv.Uhv#O@x6c)r">
+                                                    <field name="OP">EQ</field>
+                                                    <value name="A">
+                                                      <block type="dict_key_value" id="FC-)0VA8T=I6KFl~?qy$">
+                                                        <value name="dict_name">
+                                                          <shadow type="text_dict" id=";M~yxil:;_5S+EB:0(yW">
+                                                            <field name="TEXT"></field>
+                                                          </shadow>
+                                                          <block type="variables_get" id="tcsZJ4cVg=/a~)L1Ap|@">
+                                                            <field name="VAR">tianqi</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="dict_items">
+                                                          <shadow type="text" id="O6f5rT!6gI73qo#=L8~4">
+                                                            <field name="TEXT">weather</field>
+                                                          </shadow>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="text" id="}Bn1i.|%9FV)8/$`GAE0">
+                                                        <field name="TEXT">多云</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <statement name="DO0">
+                                                  <block type="yeelight_set_rgb_color" id=":@iWH{j[BuY-Q%Ntor9e">
+                                                    <field name="yeelight_name">bulb</field>
+                                                    <field name="COLOUR">#cc33cc</field>
+                                                    <next>
+                                                      <block type="yeelight_set_brightness" id="AXT;k3Inms%eCi+`$_n+">
+                                                        <field name="yeelight_name">bulb</field>
+                                                        <value name="brightness">
+                                                          <shadow type="zero_to_100" id="H_xsTHapa?+7nS,gCveL">
+                                                            <field name="count">0</field>
+                                                          </shadow>
+                                                        </value>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </statement>
+                                                <next>
+                                                  <block type="controls_if" id="40,_ng(x:5k,QEuC9%9+">
+                                                    <value name="IF0">
+                                                      <block type="logic_compare" id="fVjatT1]q?V_X*l-41^B">
+                                                        <field name="OP">EQ</field>
+                                                        <value name="A">
+                                                          <block type="dict_key_value" id="4:rJev16ku:A]r}^QWzU">
+                                                            <value name="dict_name">
+                                                              <shadow type="text_dict" id=";M~yxil:;_5S+EB:0(yW">
+                                                                <field name="TEXT"></field>
+                                                              </shadow>
+                                                              <block type="variables_get" id="NzmRd/Papfp2-%SAYlRK">
+                                                                <field name="VAR">tianqi</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="dict_items">
+                                                              <shadow type="text" id="~JqF?9PapK{}[]([Yg)~">
+                                                                <field name="TEXT">weather</field>
+                                                              </shadow>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <value name="B">
+                                                          <block type="text" id="B!}7xfvDK?YZ2N.lJp2a">
+                                                            <field name="TEXT">阴天</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <statement name="DO0">
+                                                      <block type="yeelight_set_rgb_color" id=")@9jrKH/M#a`#*N*mFw/">
+                                                        <field name="yeelight_name">bulb</field>
+                                                        <field name="COLOUR">#000099</field>
+                                                        <next>
+                                                          <block type="yeelight_set_brightness" id="yI[BlxL~M=4R6UFHqQ^=">
+                                                            <field name="yeelight_name">bulb</field>
+                                                            <value name="brightness">
+                                                              <shadow type="zero_to_100" id="ZE7Jh./cSx^|R.LrR*QD">
+                                                                <field name="count">0</field>
+                                                              </shadow>
+                                                            </value>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </statement>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

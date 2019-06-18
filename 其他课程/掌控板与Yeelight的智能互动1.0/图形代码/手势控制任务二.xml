@@ -1,0 +1,80 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="mpython_init_wifi" id="BeO$c=}qlf8AAV;]Vao0" x="-662" y="-1162">
+    <value name="ssid">
+      <shadow type="text" id="SuS@6/XY-Rc7A0E1F?q^">
+        <field name="TEXT">小米路由器makerspace</field>
+      </shadow>
+    </value>
+    <value name="password">
+      <shadow type="text" id="p;,Itkxb,E/=%SBm#AWn">
+        <field name="TEXT">m@kersp@ce</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="yeelight_search" id="ngRu6XF.`:z%Wg5MF.0[">
+        <next>
+          <block type="yeelight_init" id="E6C|Np9p-tD-4cJy9%*f">
+            <field name="yeelight_name">bulb</field>
+            <value name="order">
+              <shadow type="math_number" id="i4g35:eL(VSVPjOHC?BB">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="mpython_Interrupt_AB" id=",NZS!X3)|Z2x:dG6uE$c">
+                <field name="button">button_a</field>
+                <field name="action">down</field>
+                <statement name="DO">
+                  <block type="yeelight_switch_state" id="TuSMl*`vR=Fz-kA-K}I%">
+                    <field name="state">turn_on()</field>
+                    <field name="yeelight_name">bulb</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="mpython_shake_detector" id=")j?Uqb)uN/qX^Si00XMU">
+                    <statement name="DO">
+                      <block type="controls_repeat_forever" id="PbY?*Y:Z(kZD20T(C^xI">
+                        <statement name="DO">
+                          <block type="yeelight_switch_state" id="~PQA|{!9v5DNK^6.ERa[">
+                            <field name="state">turn_off()</field>
+                            <field name="yeelight_name">bulb</field>
+                            <next>
+                              <block type="mpython_sleep_ms" id="u#:(6WU_IwQL8eRayL]!">
+                                <field name="ms_us">s</field>
+                                <value name="duration">
+                                  <shadow type="math_number" id="!^-e{XPrkX(K_LkG.`=R">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="yeelight_switch_state" id="T~V=..cIqc|4=$=iw]6;">
+                                    <field name="state">turn_on()</field>
+                                    <field name="yeelight_name">bulb</field>
+                                    <next>
+                                      <block type="mpython_sleep_ms" id="{985osO4gw0A6KC4c1xI">
+                                        <field name="ms_us">s</field>
+                                        <value name="duration">
+                                          <shadow type="math_number" id="u(y,$i3eGH,7_buLcV0s">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

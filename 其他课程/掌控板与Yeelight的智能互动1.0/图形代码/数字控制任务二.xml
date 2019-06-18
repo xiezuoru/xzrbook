@@ -1,0 +1,357 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="mpython_init_wifi" id="_GhF-Kt:D5.L{~|?]W?b" x="-750" y="-563">
+    <value name="ssid">
+      <shadow type="text" id="G},+,o/L5)SGK1~I~3_:">
+        <field name="TEXT">小米路由器makerspace</field>
+      </shadow>
+    </value>
+    <value name="password">
+      <shadow type="text" id="`H.[k);gpC9mKLP58/~h">
+        <field name="TEXT">m@kersp@ce</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="yeelight_search" id="#!/$bhI)ieBqz2_5B@^7">
+        <next>
+          <block type="yeelight_init" id="bKnzOTU_Ggbus28D*lFH">
+            <field name="yeelight_name">bulb</field>
+            <value name="order">
+              <shadow type="math_number" id="AtC-wF8+ZZ`a*d#$^#8m">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="yeelight_switch_state" id="ei:xewvK7lXJWDcxZaI@">
+                <field name="state">turn_on()</field>
+                <field name="yeelight_name">bulb</field>
+                <next>
+                  <block type="variables_set" id="fv,eL2#`1mlc)K1Zd)c4">
+                    <field name="VAR">r1</field>
+                    <value name="VALUE">
+                      <shadow type="math_number" id="`cl4:o7T*u-LNl;atF}e">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="rL8Y$.2]nwq:_4Z-zbB,">
+                        <field name="VAR">g1</field>
+                        <value name="VALUE">
+                          <shadow type="math_number" id=")su`I$e/jY9]~yO*3+s(">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="variables_set" id="9E3n9$GCa)QuR4A0K}zp">
+                            <field name="VAR">b1</field>
+                            <value name="VALUE">
+                              <shadow type="math_number" id="*i=(90f%)-,i^p2r1hxF">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="mpython_display_fill" id="7D3G{1U#j7}RZ@1fSDa6">
+                                <field name="display_fill">fill(0)</field>
+                                <next>
+                                  <block type="mpython_Interrupt_AB" id="0bHVCC8UX69v*JQ}O[Ka">
+                                    <field name="button">button_a</field>
+                                    <field name="action">down</field>
+                                    <statement name="DO">
+                                      <block type="math_change" id="PkE`BZT7*zyd=vvdAew!">
+                                        <field name="VAR">r1</field>
+                                        <value name="DELTA">
+                                          <shadow type="math_number" id="=G3*+8Znnj+l5O(XTo*`">
+                                            <field name="NUM">20</field>
+                                          </shadow>
+                                        </value>
+                                        <next>
+                                          <block type="yeelight_set_rgb" id="3,AgTg9-/(d9?4F-TE0^">
+                                            <field name="yeelight_name">bulb</field>
+                                            <value name="r">
+                                              <shadow type="math_number" id="I+JF?H:Cii(EX@pG:9FP">
+                                                <field name="NUM">0</field>
+                                              </shadow>
+                                              <block type="variables_get" id="mu;c(^HU-0d%3MCW9K:M">
+                                                <field name="VAR">r1</field>
+                                              </block>
+                                            </value>
+                                            <value name="g">
+                                              <shadow type="math_number" id="dF.x9S_8=mbi^1Ozrb`w">
+                                                <field name="NUM">0</field>
+                                              </shadow>
+                                              <block type="variables_get" id="/s-lDNG`QR,6m0pM)`(?">
+                                                <field name="VAR">g1</field>
+                                              </block>
+                                            </value>
+                                            <value name="b">
+                                              <shadow type="math_number" id="EKWU6I;Gd)$8PKpVjU|j">
+                                                <field name="NUM">0</field>
+                                              </shadow>
+                                              <block type="variables_get" id=":f`2y|@6e[f)~(wKVLu9">
+                                                <field name="VAR">b1</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="mpython_display_DispChar" id="vZ6u;H#U:BUE^HuUF~?n">
+                                                <field name="TEXTMODE">1</field>
+                                                <value name="x">
+                                                  <shadow type="math_number" id="qL%~w_dgLjVy`q/Ce.pr">
+                                                    <field name="NUM">5</field>
+                                                  </shadow>
+                                                </value>
+                                                <value name="y">
+                                                  <shadow type="math_number" id="xynEWY~={GIT_Nlu,KR5">
+                                                    <field name="NUM">0</field>
+                                                  </shadow>
+                                                </value>
+                                                <value name="message">
+                                                  <shadow type="text" id="#?_B6,zs$c%Y6-pU=BY9">
+                                                    <field name="TEXT">r:</field>
+                                                  </shadow>
+                                                </value>
+                                                <next>
+                                                  <block type="mpython_display_DispChar" id="YYT2YZ9r.h^[,/Z_{vzR">
+                                                    <field name="TEXTMODE">1</field>
+                                                    <value name="x">
+                                                      <shadow type="math_number" id=":|;v=(_yIdG/{OW^HhV+">
+                                                        <field name="NUM">15</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <value name="y">
+                                                      <shadow type="math_number" id="EvRXXS_+;jeg$?6Z/pWi">
+                                                        <field name="NUM">0</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <value name="message">
+                                                      <shadow type="text" id="/%Dx^4a;fIjGb|*]P^Fb">
+                                                        <field name="TEXT">Hello, world!</field>
+                                                      </shadow>
+                                                      <block type="text_join" id="^U%xZEJX%Fj$bHHlNUhs">
+                                                        <mutation items="1"></mutation>
+                                                        <value name="ADD0">
+                                                          <block type="variables_get" id="f#f:@@7P0$hAh5)RP:Db">
+                                                            <field name="VAR">r1</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="mpython_display_Show" id="01-~im;j:e#w.;y0m%3z"></block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </statement>
+                                    <next>
+                                      <block type="mpython_Interrupt_AB" id="cx(ch)pRvxS}Zvh`P99$">
+                                        <field name="button">button_b</field>
+                                        <field name="action">down</field>
+                                        <statement name="DO">
+                                          <block type="math_change" id="axxL+.s?@JVp0ZEp$X%O">
+                                            <field name="VAR">g1</field>
+                                            <value name="DELTA">
+                                              <shadow type="math_number" id="nmwcAO,WzHP)MlL_O9%]">
+                                                <field name="NUM">20</field>
+                                              </shadow>
+                                            </value>
+                                            <next>
+                                              <block type="yeelight_set_rgb" id=",)}4`E=NMS^x0SOEtKX|">
+                                                <field name="yeelight_name">bulb</field>
+                                                <value name="r">
+                                                  <shadow type="math_number" id="I+JF?H:Cii(EX@pG:9FP">
+                                                    <field name="NUM">0</field>
+                                                  </shadow>
+                                                  <block type="variables_get" id="VhmrhrV`uFSBr~8S9Hu@">
+                                                    <field name="VAR">r1</field>
+                                                  </block>
+                                                </value>
+                                                <value name="g">
+                                                  <shadow type="math_number" id=":S$K!(?Pd}Hi+`o(s%a=">
+                                                    <field name="NUM">0</field>
+                                                  </shadow>
+                                                  <block type="variables_get" id="Qs4HOy8DA[A@2b7Bn;D#">
+                                                    <field name="VAR">g1</field>
+                                                  </block>
+                                                </value>
+                                                <value name="b">
+                                                  <shadow type="math_number" id="%2mPR-p|La_Rxab#n1BF">
+                                                    <field name="NUM">0</field>
+                                                  </shadow>
+                                                  <block type="variables_get" id="DX6%W$3C7Lo__k.JHBVS">
+                                                    <field name="VAR">b1</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="mpython_display_DispChar" id="9d(E)IA-+jy6rxqPnz=4">
+                                                    <field name="TEXTMODE">1</field>
+                                                    <value name="x">
+                                                      <shadow type="math_number" id="YOpkI|l#-P2]K-h-Gi,`">
+                                                        <field name="NUM">35</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <value name="y">
+                                                      <shadow type="math_number" id="Cq89iQo[x*U|9gBQpxHo">
+                                                        <field name="NUM">0</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <value name="message">
+                                                      <shadow type="text" id="9wd}QZ(*?BKGtZ+Qe@Qu">
+                                                        <field name="TEXT">g:</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <next>
+                                                      <block type="mpython_display_DispChar" id="%YdM#q{Ql35PYP=nj+m_">
+                                                        <field name="TEXTMODE">1</field>
+                                                        <value name="x">
+                                                          <shadow type="math_number" id="n-?x-Gx:@=%m4mT6p6w+">
+                                                            <field name="NUM">45</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="y">
+                                                          <shadow type="math_number" id="=p,HQz7SSH8ILkx)_vj?">
+                                                            <field name="NUM">0</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="message">
+                                                          <shadow type="text" id="/%Dx^4a;fIjGb|*]P^Fb">
+                                                            <field name="TEXT">Hello, world!</field>
+                                                          </shadow>
+                                                          <block type="text_join" id="qKica%*y[+19Kzfsizx4">
+                                                            <mutation items="1"></mutation>
+                                                            <value name="ADD0">
+                                                              <block type="variables_get" id="t,TbHEQ3fFFn${`7s[2q">
+                                                                <field name="VAR">g1</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="mpython_display_Show" id="#1gVX{3(9?VVr/#mn^%{"></block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="mpython_touch_event" id="Ia$+[WB?Af0eE)^HD?gQ">
+                                            <field name="touchPad">P</field>
+                                            <field name="action">pressed</field>
+                                            <statement name="DO">
+                                              <block type="math_change" id="Y+h}Idke_3dIIwL#;lM*">
+                                                <field name="VAR">b1</field>
+                                                <value name="DELTA">
+                                                  <shadow type="math_number" id="BIS39^+C{Fv!NX%2=5*a">
+                                                    <field name="NUM">20</field>
+                                                  </shadow>
+                                                </value>
+                                                <next>
+                                                  <block type="yeelight_set_rgb" id="Q:kg%~a_7*vW5ca-h:3K">
+                                                    <field name="yeelight_name">bulb</field>
+                                                    <value name="r">
+                                                      <shadow type="math_number" id="I+JF?H:Cii(EX@pG:9FP">
+                                                        <field name="NUM">0</field>
+                                                      </shadow>
+                                                      <block type="variables_get" id="ecxyGL2VnAZqOYDIr0v5">
+                                                        <field name="VAR">r1</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="g">
+                                                      <shadow type="math_number" id=":S$K!(?Pd}Hi+`o(s%a=">
+                                                        <field name="NUM">0</field>
+                                                      </shadow>
+                                                      <block type="variables_get" id="NZ*x|pZCBRlGep]GF_I*">
+                                                        <field name="VAR">g1</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="b">
+                                                      <shadow type="math_number" id="%o3meT|PKP@7k?GG{!i?">
+                                                        <field name="NUM">0</field>
+                                                      </shadow>
+                                                      <block type="variables_get" id="Ib[^5^5FX?9TL9[`XtG4">
+                                                        <field name="VAR">b1</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="mpython_display_DispChar" id="KXMV![oimNr}X+)qR}V-">
+                                                        <field name="TEXTMODE">1</field>
+                                                        <value name="x">
+                                                          <shadow type="math_number" id="!oruXJ2S5.|f*7S`FlpP">
+                                                            <field name="NUM">65</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="y">
+                                                          <shadow type="math_number" id="PUaH5%OvW~2Tlw9Pev;7">
+                                                            <field name="NUM">0</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="message">
+                                                          <shadow type="text" id="S??0]zikyl8ZdGG?|!mU">
+                                                            <field name="TEXT">b:</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <next>
+                                                          <block type="mpython_display_DispChar" id="xcQ:deKr4$S(HU}_]*@k">
+                                                            <field name="TEXTMODE">1</field>
+                                                            <value name="x">
+                                                              <shadow type="math_number" id="9-}}H%wUq;#OQdrm%yVc">
+                                                                <field name="NUM">75</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <value name="y">
+                                                              <shadow type="math_number" id="dK|@jfs3WPxXxt#912}#">
+                                                                <field name="NUM">0</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <value name="message">
+                                                              <shadow type="text" id="/%Dx^4a;fIjGb|*]P^Fb">
+                                                                <field name="TEXT">Hello, world!</field>
+                                                              </shadow>
+                                                              <block type="text_join" id="5`)^]Nv48/nT/gIIV/5s">
+                                                                <mutation items="1"></mutation>
+                                                                <value name="ADD0">
+                                                                  <block type="variables_get" id="mY~x:Z%TKt]~4SjV*V+I">
+                                                                    <field name="VAR">b1</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="mpython_display_Show" id="2nFyj.v3JL:BU`qst+9m"></block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </statement>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
