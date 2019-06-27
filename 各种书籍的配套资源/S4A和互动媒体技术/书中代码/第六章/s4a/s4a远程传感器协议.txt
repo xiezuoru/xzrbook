@@ -1,0 +1,7 @@
+- For messages: http://127.0.0.1:42001/broadcast=hello 
+- For remote sensors: http://127.0.0.1:42001/sensor-update=number=1 
+第一句，会在广播中增加一项hello。相当于发送广播“hello” 
+第二句，会在传感器中（scratch的传感器板的位置），增加一个变量
+number，值为1； 
+http://127.0.0.1:42001/?send-messages（返回所有广播）
+http://127.0.0.1:42001/?send-vars（返回所有变量）

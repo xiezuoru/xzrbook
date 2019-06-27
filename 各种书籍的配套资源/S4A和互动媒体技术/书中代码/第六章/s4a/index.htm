@@ -1,0 +1,270 @@
+<html>
+
+<head>
+<title>s4a和web的交互——测试</title>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script type="text/javascript">
+var sensorX=0;
+var sensorY=0;
+function loadXMLDoc(url,s4aid)
+{
+var s4aurl="http://"+ s4aip.value +":42001/";
+var xmlhttp;
+	if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	xmlhttp.onreadystatechange=function()  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+	var str=xmlhttp.responseText;
+	if (s4aid==1)
+	{
+		if (str.indexOf("ScratchServer")>0){showtxt='连接成功！';}else{showtxt='连接失败！';}
+	}else if (s4aid==2)
+	{
+		//showtxt=str;
+		temp=str.split(" ");
+		showtxt='';
+		document.getElementById("gblist").innerHTML="";
+		for (i=1;i<temp.length-1;i++ ){
+			xzr=temp[i].replace(/"/g,"");
+			showtxt=showtxt + xzr +"<br>";
+			document.getElementById("gblist").innerHTML=document.getElementById("gblist").innerHTML + "广播事件"+ i +"："+ xzr +"；操作：<button type='button' onclick='opencmd(\"?broadcast="+ xzr +"\",9)'>点击发送</button><br>";
+		}
+		if (temp.length==2){showtxt='没有广播事件！';}
+	}else if (s4aid==3)
+	{
+		//showtxt=str;
+		temp=str.split(" ");
+		showtxt='';
+		document.getElementById("var_list").innerHTML="";
+		for (i=1;i<temp.length-1;i=i+2 ){
+			xzr1=temp[i].replace(/"/g,"");
+			xzr2=temp[i+1].replace(/"/g,"");
+			showtxt=showtxt + xzr1 + ":" + xzr2 +"<br>";
+			document.getElementById("var_list").innerHTML=document.getElementById("var_list").innerHTML + "填写变量（"+ xzr1 +"）的新值：<input id='newvar_"+ i +"' name='newvar_"+ i +"' type='text' value='"+ xzr2 +"' size='10'><button type='button' onclick='opencmd(\"?vars-update="+ xzr1 +"=\"\+ newvar_"+ i +".value,9)'>修改</button><br>";
+			}
+		if (temp.length==2){showtxt='没有变量！';document.getElementById("var_list").innerHTML="<h2>没有变量！</h2>";}
+	}
+    document.getElementById("myDiv").innerHTML="<h2>"+ showtxt +"</h2>";
+    }
+	else
+	{document.getElementById("myDiv").innerHTML='<h2>scratch还没有“允许远程传感器连接”！</h2>';}
+  }
+xmlhttp.open("GET",s4aurl + url,true);
+xmlhttp.send();
+}
+
+//单向命令判断
+function opencmd(url,s4aid)
+{
+var s4aurl="http://"+ s4aip.value +":42001/";
+if (s4aid==9)
+	{
+		url=s4aurl + url;
+		ajaxopen(url);
+	}
+else if (s4aid==51)
+	{
+		sensorX=sensorX-(xy.value)*1;
+		sensorY=sensorY+(xy.value)*1;
+		geturl=s4aurl + url +"=sensorX="+ sensorX;
+		ajaxopen(geturl);
+		geturl=s4aurl + url +"=sensorY="+ sensorY;
+		ajaxopen(geturl);
+	}
+else if (s4aid==52)
+	{
+		sensorY=sensorY+(xy.value)*1;
+		geturl=s4aurl + url +"=sensorY="+ sensorY;
+		ajaxopen(geturl);
+	}
+else if (s4aid==53)
+	{
+		sensorX=sensorX+(xy.value)*1;
+		sensorY=sensorY+(xy.value)*1;
+		geturl=s4aurl + url +"=sensorX="+ sensorX;
+		ajaxopen(geturl);
+		geturl=s4aurl + url +"=sensorY="+ sensorY;
+		ajaxopen(geturl);
+	}
+else if (s4aid==54)
+	{
+		sensorX=sensorX-(xy.value)*1;
+		geturl=s4aurl + url +"=sensorX="+ sensorX;
+		ajaxopen(geturl);
+	}
+else if (s4aid==55)
+	{
+		sensorX=0;
+		sensorY=0;
+		geturl=s4aurl + url +"=sensorX="+ sensorX;
+		ajaxopen(geturl);
+		geturl=s4aurl + url +"=sensorY="+ sensorY;
+		ajaxopen(geturl);
+	}
+else if (s4aid==56)
+	{
+		sensorX=sensorX+(xy.value)*1;
+		geturl=s4aurl + url +"=sensorX="+ sensorX;
+		ajaxopen(geturl);
+	}
+else if (s4aid==57)
+	{
+		sensorX=sensorX-(xy.value)*1;
+		sensorY=sensorY-(xy.value)*1;
+		geturl=s4aurl + url +"=sensorX="+ sensorX;
+		ajaxopen(geturl);
+		geturl=s4aurl + url +"=sensorY="+ sensorY;
+		ajaxopen(geturl);
+	}
+else if (s4aid==58)
+	{
+		sensorY=sensorY-(xy.value)*1;
+		geturl=s4aurl + url +"=sensorY="+ sensorY;
+		ajaxopen(geturl);
+	}
+else if (s4aid==59)
+	{
+		sensorX=sensorX+(xy.value)*1;
+		sensorY=sensorY-(xy.value)*1;
+		geturl=s4aurl + url +"=sensorX="+ sensorX;
+		ajaxopen(geturl);
+		geturl=s4aurl + url +"=sensorY="+ sensorY;
+		ajaxopen(geturl);
+	}
+showX.value=sensorX;
+showY.value=sensorY;
+//alert(showX.value);
+//document.getElementById("myDiv").innerHTML="发送！";
+}
+
+//命令发送
+function ajaxopen(url)
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET",url,true);
+xmlhttp.send();
+document.getElementById("myDiv").innerHTML="<h2>命令发送成功！</h2>";
+}
+
+</script>
+<style>
+<!--
+body           { font-size: 10pt }
+td           { font-size: 10pt }
+-->
+</style>
+</head>
+
+<div id="myDiv">
+	<h2>请在“侦测”中点击右键，选择“允许远程传感器连接”</h2>
+</div>
+<hr>输入你要连接的s4a服务器ip：<input id="s4aip" name="s4aip" type="text" value="192.168.169.3">
+<button type="button" onclick="loadXMLDoc('',1)">测试连接</button><hr>
+<fieldset>
+<legend><b>广播事件区域：</b></legend>
+<br>
+<div id="s4a_gb">
+	<table border="1" width="90%" bordercolorlight="#008000" bordercolordark="#FFFFFF" cellspacing="0" cellpadding="0" align=center>
+		<tr>
+			<td width="33%"><button type="button" onclick="loadXMLDoc('?send-messages',2)">列出所有广播事件
+			</button>
+			</td><td width="33%">
+			<div id="gblist">广播显示区域</div>
+			</td>
+			<td>填写广播名：<input id="newmsg" name="newmsg" type="text" value="newmsg" size="10">
+			<button type="button" onclick="opencmd('?broadcast='+ newmsg.value,9)">
+			添加广播</button></td>
+		</tr>
+	</table>
+</div>
+<br>
+</fieldset>
+<fieldset>
+<legend><b>变量区域：</b></legend>
+<br>
+<div id="s4a_bl">
+<table border="1" width="90%" bordercolorlight="#008000" cellspacing="0" cellpadding="0" bordercolordark="#FFFFFF"  align=center>
+	<tr>
+		<td width="50%"><button type="button" onclick="loadXMLDoc('?send-vars',3)">列出所有变量</button>
+		</td>
+		<td>
+		<div id="var_list">变量显示区域</div></td>
+	</tr>
+</table>
+</div>
+<br>
+</fieldset>
+<fieldset>
+<legend><b>传感器区域：</b></legend>
+<br>
+<div id="s4a_sen">
+	　<table border="1" width="90%" bordercolorlight="#008000" cellspacing="0" cellpadding="0" bordercolordark="#FFFFFF" align=center>
+		<tr>
+			<td width="33%">移动距离设定（步长）：<input id="xy" name="xy" type="text" value="5" size="4"><br>
+			sensorX的值：<input id="showX" name="showX" type="text" value="0" size="8" readonly><br>
+			sensorY的值：<input id="showY" name="showY" type="text" value="0" size="8" readonly></td>
+			<td width="33%">
+			<div align="center">
+				<table border="1" width="80" cellspacing="0" cellpadding="0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+					<tr>
+						<td>
+						<button type="button" onclick="opencmd('?sensor-update',51)">↖</button></td>
+						<td>
+						<button type="button" onclick="opencmd('?sensor-update',52)">↑</button></td>
+						<td>
+						<button type="button" onclick="opencmd('?sensor-update',53)">↗</button></td>
+					</tr>
+					<tr>
+						<td>
+						<button type="button" onclick="opencmd('?sensor-update',54)">←</button></td>
+						<td>
+						<button type="button" onclick="opencmd('?sensor-update',55)">&#8596;</button></td>
+						<td>
+						<button type="button" onclick="opencmd('?sensor-update',56)">→</button></td>
+					</tr>
+					<tr>
+						<td>
+						<button type="button" onclick="opencmd('?sensor-update',57)">↙</button></td>
+						<td>
+						<button type="button" onclick="opencmd('?sensor-update',58)">↓</button></td>
+						<td>
+						<button type="button" onclick="opencmd('?sensor-update',59)">↘</button></td>
+					</tr>
+				</table>
+			</div>
+			</td>
+			<td width="33%">分别发送两个变量，sensorX和sensorY；<br>
+			sensorX为X坐标<br>
+			sensorY为Y坐标</td>
+		</tr>
+	</table>
+<br>
+</div>
+</fieldset> <hr>广播名称和变量名称请不要用中文！
+
+</body>
+
+<p>超级链接：<a href="sensor.htm">触摸屏页面</a></p>
+<script type="text/javascript">
+//s4aip.value=document.location;
+var s=document.location.host;
+temp=s.split(":");
+s4aip.value=temp[0];
+</script>
+</html>

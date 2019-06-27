@@ -1,0 +1,34 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>互动媒体作品</title>
+</head>
+<body>
+<p align="center">　</p>
+<p align="center"><font size="5">互动媒体作品《飞舞的图案》——控制页面</font></p>
+<p align="center">（基于S4A远程传感器协议）</p>
+<hr>
+<p align="center"><a href="http://127.0.0.1:42001/?broadcast=start">开始画图</a><a href="http://127.0.0.1:42001/?broadcast=style"> 
+变换造型</a><a href="http://127.0.0.1:42001/?broadcast=cls"> 清除画面</a><a href="http://127.0.0.1:42001/?broadcast=end"> 
+停止运行</a></p>
+<table border="1" width="100%" height="41">
+	<tr>
+		<td align="center">
+			<p align="center">
+			<input type="text" name="sensor" size="20" value="speed=1"><input type="button" value="发送传感器" name="B1" onclick="s4a.location='http://127.0.0.1:42001/sensor-update='+ sensor.value"><input type="reset" value="重置" name="B2"></p>
+		<p>　</td>
+	</tr>
+</table>
+<p>　</p>
+<table border="1" width="100%" id="table2">
+	<tr>
+		<td height="36">
+		<p align="center"><b>显示区域</b></td>
+	</tr>
+	<tr>
+		<td align="center"><iframe name="s4a" width="496" height="49"></iframe></td>
+	</tr>
+</table>
+</body>
+</html>

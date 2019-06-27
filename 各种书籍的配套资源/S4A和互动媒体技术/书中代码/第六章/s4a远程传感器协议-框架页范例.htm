@@ -1,0 +1,64 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>s4a远程传感器协议</title>
+<base target="s4a">
+<style>
+<!--
+td           { font-size: 10pt }
+-->
+</style>
+</head>
+
+<body style="text-align: center">
+
+<p align="center">　</p>
+<p align="center"><font size="4">S4A远程传感器协议测试</font></p>
+<table border="1" width="900" id="table1" height="179">
+	<tr>
+		<td width="207"><b><font size="2">作用</font></b></td>
+		<td width="515"><b><font size="2">链接</font></b></td>
+		<td width="156" align="center"><b><font size="2">链接</font></b></td>
+	</tr>
+	<tr>
+		<td width="207"><font size="2">返回所有广播</font></td>
+		<td width="515"><font size="2">http://127.0.0.1:42001/?send-messages</font></td>
+		<td width="156" align="center"><font size="2">
+		<a href="http://127.0.0.1:42001/?send-messages">执行</a></font></td>
+	</tr>
+	<tr>
+		<td width="207">返回所有变量</td>
+		<td width="515">http://127.0.0.1:42001/?send-vars</td>
+		<td width="156" align="center"><a href="http://127.0.0.1:42001/?send-vars">执行</a></td>
+	</tr>
+	<tr>
+		<td width="207">广播hello</td>
+		<td width="515">http://127.0.0.1:42001/broadcast=hello</td>
+		<td width="156" align="center">
+		<a href="http://127.0.0.1:42001/broadcast=hello">执行</a></td>
+	</tr>
+	<tr>
+		<td width="207">增加变量number，值为1</td>
+		<td width="515">http://127.0.0.1:42001/sensor-update=number=1</td>
+		<td width="156" align="center">
+		<a href="http://127.0.0.1:42001/sensor-update=number=1">执行</a></td>
+	</tr>
+</table>
+
+
+<table border="1" width="900" id="table2">
+	<tr>
+		<td height="36">
+		<p align="center"><b>显示区域</b></td>
+	</tr>
+	<tr>
+		<td align="center"><iframe id="s4a" name="s4a" class="FrmID" id="chgClass"  style="width:470px;height:160px;" src="" frameborder="0" scrolling="auto" onunload=""></iframe></td>
+	</tr>
+</table>
+
+
+</body>
+
+</html>

@@ -1,0 +1,577 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<title>手机App云用户管理系统-说明文档</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:21.0pt;
+	font-size:10.5pt;
+	font-family:"Calibri","sans-serif";}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN link=blue vlink=purple style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:15.0pt;font-family:宋体'>手机</span><span lang=EN-US
+style='font-size:15.0pt'>App</span><span style='font-size:15.0pt;font-family:
+宋体'>云用户管理系统</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:14.0pt;font-family:宋体'>说明文档</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:宋体'>开发背景</span></b><span
+style='font-family:宋体'>：</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='font-family:宋体'>越越学习</span><span lang=EN-US>App inventor</span><span
+style='font-family:宋体'>一段时间后，发现</span><span lang=EN-US>TinyDB</span><span
+style='font-family:宋体'>组件并不好用。因为他写了一个用户注册的</span><span lang=EN-US>App</span><span
+style='font-family:宋体'>，在不同手机上的，数据不能共享。于是，我向他介绍了手机</span><span lang=EN-US>App</span><span
+style='font-family:宋体'>一般要结合云服务的道理。为了让他能够具体写类似云服务功能的</span><span lang=EN-US>App</span><span
+style='font-family:宋体'>，我用</span><span lang=EN-US>Asp</span><span
+style='font-family:宋体'>写了一个简单的云用户管理系统，开放接口，提供给他和更多的小朋友使用。当然，最重要的是，我们开发的选修课程《跟我学</span><span
+lang=EN-US>App inventor</span><span style='font-family:宋体'>》也可以使用这一系统，作为教学资源了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:宋体'>接口说明：</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体'>本程序接口由两部分组成，</span><span
+lang=EN-US>1</span><span style='font-family:宋体'>是接口文件的</span><span lang=EN-US>URL</span><span
+style='font-family:宋体'>地址，二是</span><span lang=EN-US>URL</span><span
+style='font-family:宋体'>的参数，以</span><span lang=EN-US>Http</span><span
+style='font-family:宋体'>形式提交，同时支持</span><span lang=EN-US>GET</span><span
+style='font-family:宋体'>和</span><span lang=EN-US>POST</span><span
+style='font-family:宋体'>。</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体'>接口</span><span
+lang=EN-US>URL</span><span style='font-family:宋体'>地址：</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US><a
+href="http://www.wzms.cn/tot/reg/index.asp">http://www.wzms.cn/tot/reg/index.asp</a></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体'>参数说明：</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体'>参数分为</span><span
+lang=EN-US>appid</span><span style='font-family:宋体'>、</span><span lang=EN-US>action</span><span
+style='font-family:宋体'>、</span><span lang=EN-US>regname</span><span
+style='font-family:宋体'>、</span><span lang=EN-US>regpass</span><span
+style='font-family:宋体'>、</span><span lang=EN-US>newregpass</span><span
+style='font-family:宋体'>、</span><span lang=EN-US>score</span><span
+style='font-family:宋体'>等六个，具体的说明如下表。</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr style='height:15.7pt'>
+  <td width=106 style='width:79.35pt;border:solid windowtext 1.0pt;padding:
+  0cm 5.4pt 0cm 5.4pt;height:15.7pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:宋体'>参数</span></b></p>
+  </td>
+  <td width=61 style='width:46.05pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:15.7pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:宋体'>类型</span></b></p>
+  </td>
+  <td width=61 style='width:45.95pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:15.7pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:宋体'>值</span></b></p>
+  </td>
+  <td width=334 style='width:250.35pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:15.7pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:宋体'>含义</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:7.05pt'>
+  <td width=106 style='width:79.35pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:7.05pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>appid</span></p>
+  </td>
+  <td width=61 style='width:46.05pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:7.05pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>必选</span></p>
+  </td>
+  <td width=61 style='width:45.95pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:7.05pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>数字</span></p>
+  </td>
+  <td width=334 style='width:250.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:7.05pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>App</span><span
+  style='font-family:宋体'>编号，用来区分不同的应用程序。</span></p>
+  </td>
+ </tr>
+ <tr style='height:8.65pt'>
+  <td width=106 rowspan=6 style='width:79.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:8.65pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>action</span></p>
+  </td>
+  <td width=61 rowspan=6 style='width:46.05pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:8.65pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>必选</span></p>
+  </td>
+  <td width=61 style='width:45.95pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:8.65pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>1</span></p>
+  </td>
+  <td width=334 style='width:250.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:8.65pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>查询用户是否可用，并返回用户的分数</span></p>
+  </td>
+ </tr>
+ <tr style='height:6.9pt'>
+  <td width=61 style='width:45.95pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.9pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>2</span></p>
+  </td>
+  <td width=334 style='width:250.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.9pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>登陆，判断用户名和密码是否正确。</span></p>
+  </td>
+ </tr>
+ <tr style='height:8.65pt'>
+  <td width=61 style='width:45.95pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:8.65pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>3</span></p>
+  </td>
+  <td width=334 style='width:250.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:8.65pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>添加用户</span></p>
+  </td>
+ </tr>
+ <tr style='height:7.85pt'>
+  <td width=61 style='width:45.95pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:7.85pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>4</span></p>
+  </td>
+  <td width=334 style='width:250.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:7.85pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>修改密码</span></p>
+  </td>
+ </tr>
+ <tr style='height:7.85pt'>
+  <td width=61 style='width:45.95pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:7.85pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>5</span></p>
+  </td>
+  <td width=334 style='width:250.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:7.85pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>更新分数，返回相关统计情况，如名次，总数，最高分、最低分和平均分。如果用户不存在，就自动添加这个用户，初始密码为“</span><span
+  lang=EN-US>123456</span><span style='font-family:宋体'>”。</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.7pt'>
+  <td width=61 style='width:45.95pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.7pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>6</span></p>
+  </td>
+  <td width=334 style='width:250.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.7pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>总体查询，查询某</span><span lang=EN-US>app</span><span
+  style='font-family:宋体'>的统计信息，如注册用户，有效分数，最高分、最低分和平均分。</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.7pt'>
+  <td width=106 style='width:79.35pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:15.7pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>regname</span></p>
+  </td>
+  <td width=61 style='width:46.05pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.7pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>可选</span></p>
+  </td>
+  <td width=61 style='width:45.95pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.7pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>文本</span></p>
+  </td>
+  <td width=334 style='width:250.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.7pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>用户名，查询与某用户相关的信息。</span></p>
+  </td>
+ </tr>
+ <tr style='height:16.5pt'>
+  <td width=106 style='width:79.35pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>regpass</span></p>
+  </td>
+  <td width=61 style='width:46.05pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>可选</span></p>
+  </td>
+  <td width=61 style='width:45.95pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>文本</span></p>
+  </td>
+  <td width=334 style='width:250.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>用户密码，查询与某用户相关的信息。</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.7pt'>
+  <td width=106 style='width:79.35pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:15.7pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>newregpass</span></p>
+  </td>
+  <td width=61 style='width:46.05pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.7pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>可选</span></p>
+  </td>
+  <td width=61 style='width:45.95pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.7pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>文本</span></p>
+  </td>
+  <td width=334 style='width:250.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.7pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>用户新密码，修改密码的时候需要。</span></p>
+  </td>
+ </tr>
+ <tr style='height:16.5pt'>
+  <td width=106 style='width:79.35pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>score</span></p>
+  </td>
+  <td width=61 style='width:46.05pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>可选</span></p>
+  </td>
+  <td width=61 style='width:45.95pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>数字</span></p>
+  </td>
+  <td width=334 style='width:250.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:宋体'>用户得分，用来记录用户的游戏分数。</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体'>注：</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US>1</span><span
+style='font-family:宋体'>．</span><span lang=EN-US>appid</span><span
+style='font-family:宋体'>和</span><span lang=EN-US>score</span><span
+style='font-family:宋体'>支持长整形数值。</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US>2</span><span
+style='font-family:宋体'>．有效分数指大于</span><span lang=EN-US>0</span><span
+style='font-family:宋体'>的分数。</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><b><span style='font-family:宋体'>信息返回格式：</span></b><span
+style='font-family:宋体'>前两个字符为</span><span lang=EN-US>ok</span><span
+style='font-family:宋体'>或者</span><span lang=EN-US>no</span><span
+style='font-family:宋体'>，后面则为其他具体的信息。<b>所有的标点为英文符号。</b></span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:宋体'>使用范例</span></b><span
+style='font-family:宋体'>：</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体'>下面的范例以</span><span
+lang=EN-US>appid</span><span style='font-family:宋体'>等于</span><span lang=EN-US>1</span><span
+style='font-family:宋体'>为例，将接口文件和参数合并为一个完成的</span><span lang=EN-US>URL</span><span
+style='font-family:宋体'>地址。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>1</span><span style='font-family:宋体'>．查询用户</span><span
+lang=EN-US>xzr</span><span style='font-family:宋体'>是否可以注册或者查询用户</span><span
+lang=EN-US>xzr</span><span style='font-family:宋体'>的分数。</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体'>需要参数：</span><span
+lang=EN-US>appid</span><span style='font-family:宋体'>、</span><span lang=EN-US>action</span><span
+style='font-family:宋体'>、</span><span lang=EN-US>regname</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>URL</span><span
+style='font-family:宋体'>：</span><span lang=EN-US>http://www.wzms.cn/tot/reg/index.asp?appid=1&amp;regname=xzr&amp;action=1</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体'>返回信息：</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>True</span><span
+style='font-family:宋体'>：</span><span lang=EN-US>ok,</span><span
+style='font-family:宋体'>分数</span><span lang=EN-US>:99</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>Flase</span><span
+style='font-family:宋体'>：</span><span lang=EN-US>no,</span><span
+style='font-family:宋体'>用户不存在</span><span lang=EN-US>!</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>2</span><span style='font-family:宋体'>．查询用户</span><span
+lang=EN-US>xzr</span><span style='font-family:宋体'>和密码</span><span lang=EN-US>123456</span><span
+style='font-family:宋体'>能否登陆。</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体'>需要参数：</span><span
+lang=EN-US>appid</span><span style='font-family:宋体'>、</span><span lang=EN-US>action</span><span
+style='font-family:宋体'>、</span><span lang=EN-US>regname</span><span
+style='font-family:宋体'>、</span><span lang=EN-US>regpass</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>URL</span><span
+style='font-family:宋体'>：</span><span lang=EN-US style='font-size:9.0pt'>http://www.wzms.cn/tot/reg/index.asp?appid=1&amp;regname=xzr&amp;regpass=123456&amp;action=2</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体'>返回信息：</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>True</span><span
+style='font-family:宋体'>：</span><span lang=EN-US>ok,</span><span
+style='font-family:宋体'>登陆成功</span><span lang=EN-US>!</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>Flase</span><span
+style='font-family:宋体'>：</span><span lang=EN-US>no,</span><span
+style='font-family:宋体'>用户不存在</span><span lang=EN-US>!</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>3</span><span style='font-family:宋体'>．添加用户</span><span
+lang=EN-US>xzr</span><span style='font-family:宋体'>、密码</span><span lang=EN-US>123</span><span
+style='font-family:宋体'>。</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体'>需要参数：</span><span
+lang=EN-US>appid</span><span style='font-family:宋体'>、</span><span lang=EN-US>action</span><span
+style='font-family:宋体'>、</span><span lang=EN-US>regname</span><span
+style='font-family:宋体'>、</span> <span lang=EN-US>regpass</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>URL</span><span
+style='font-family:宋体'>：</span><span lang=EN-US style='font-size:9.0pt'>http://www.wzms.cn/tot/reg/
+index.asp?appid=1&amp;regname=xzr&amp;regpass=123&amp;action=3</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体'>返回信息：</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>True</span><span
+style='font-family:宋体'>：</span><span lang=EN-US>ok,</span><span
+style='font-family:宋体'>注册成功</span><span lang=EN-US>!</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>Flase</span><span
+style='font-family:宋体'>：</span><span lang=EN-US>no,</span><span
+style='font-family:宋体'>注册失败</span><span lang=EN-US>!</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>4</span><span style='font-family:宋体'>．修改用户</span><span
+lang=EN-US>xzr</span><span style='font-family:宋体'>的新密码为</span><span lang=EN-US>321</span><span
+style='font-family:宋体'>。</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体'>需要参数：</span><span
+lang=EN-US>appid</span><span style='font-family:宋体'>、</span><span lang=EN-US>action</span><span
+style='font-family:宋体'>、</span><span lang=EN-US>regname</span><span
+style='font-family:宋体'>、</span><span lang=EN-US>regpass</span><span
+style='font-family:宋体'>、</span><span lang=EN-US>newregpass</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>URL</span><span
+style='font-family:宋体'>：</span><span lang=EN-US style='font-size:9.0pt'>http://www.wzms.cn/tot/reg/
+index.asp?appid=1&amp;regname=xzr&amp;regpass=123&amp;newregpass=321&amp;action=4</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体'>返回信息：</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>True</span><span
+style='font-family:宋体'>：</span><span lang=EN-US>ok,</span><span
+style='font-family:宋体'>密码修改成功</span><span lang=EN-US>!</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>Flase</span><span
+style='font-family:宋体'>：</span><span lang=EN-US>no,</span><span
+style='font-family:宋体'>密码修改失败</span><span lang=EN-US>,</span><span
+style='font-family:宋体'>请检查用户名和原密码</span><span lang=EN-US>!</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>5</span><span style='font-family:宋体'>．将用户</span><span
+lang=EN-US>xzr</span><span style='font-family:宋体'>的分数更新为</span><span
+lang=EN-US>99</span><span style='font-family:宋体'>。</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体'>需要参数：</span><span
+lang=EN-US>appid</span><span style='font-family:宋体'>、</span><span lang=EN-US>action</span><span
+style='font-family:宋体'>、</span><span lang=EN-US>regname</span><span
+style='font-family:宋体'>、</span><span lang=EN-US>score</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>URL</span><span
+style='font-family:宋体'>：</span><span lang=EN-US>http://www.wzms.cn/tot/reg/
+index.asp?appid=1&amp;regname=xzr&amp;score=99&amp;action=5</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体'>返回信息：</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>True</span><span
+style='font-family:宋体'>：</span><span lang=EN-US>ok,</span><span
+style='font-family:宋体'>更新成功</span><span lang=EN-US>!</span><span
+style='font-family:宋体'>名次</span><span lang=EN-US>:1;</span><span
+style='font-family:宋体'>有效分数</span><span lang=EN-US>:4;</span><span
+style='font-family:宋体'>最高</span><span lang=EN-US>:99;</span><span
+style='font-family:宋体'>最低</span><span lang=EN-US>:30;</span><span
+style='font-family:宋体'>平均</span><span lang=EN-US>:79.25</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体'>注：用户如果不存在，就自动添加密码为“</span><span
+lang=EN-US>123456</span><span style='font-family:宋体'>”的用户。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>6</span><span style='font-family:宋体'>．统计</span><span
+lang=EN-US>Appid</span><span style='font-family:宋体'>为</span><span lang=EN-US>1</span><span
+style='font-family:宋体'>的应用程序注册用户情况。</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体'>需要参数：</span><span
+lang=EN-US>appid</span><span style='font-family:宋体'>、</span><span lang=EN-US>action</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>URL</span><span
+style='font-family:宋体'>：</span><span lang=EN-US>http://www.wzms.cn/tot/reg/ index.asp?appid=1&amp;action=6</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体'>返回信息：</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span lang=EN-US>True</span><span
+style='font-family:宋体'>：</span><span lang=EN-US>ok,</span><span
+style='font-family:宋体'>注册人数</span><span lang=EN-US>:4;</span><span
+style='font-family:宋体'>有效分数</span><span lang=EN-US>:4;</span><span
+style='font-family:宋体'>最高</span><span lang=EN-US>:99;</span><span
+style='font-family:宋体'>最低</span><span lang=EN-US>:30;</span><span
+style='font-family:宋体'>平均</span><span lang=EN-US>:79.25</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt'><span style='font-family:宋体'>注：如果</span><span
+lang=EN-US>appid</span><span style='font-family:宋体'>不存在，系统输出：</span><span
+lang=EN-US>ok,</span><span style='font-family:宋体'>注册人数</span><span lang=EN-US>:0;</span><span
+style='font-family:宋体'>有效分数</span><span lang=EN-US>:0;</span><span
+style='font-family:宋体'>最高</span><span lang=EN-US>:;</span><span
+style='font-family:宋体'>最低</span><span lang=EN-US>:;</span><span
+style='font-family:宋体'>平均</span><span lang=EN-US>:</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:宋体'>后期升级</span></b><span
+style='font-family:宋体'>：</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>1</span><span style='font-family:宋体'>、给出注册功能，用户可以管理自己的</span><span
+lang=EN-US>app</span><span style='font-family:宋体'>，使用时先检查</span><span
+lang=EN-US>appid</span><span style='font-family:宋体'>是否存在；</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>2</span><span style='font-family:宋体'>、使用</span><span
+lang=EN-US>16</span><span style='font-family:宋体'>位的随机</span><span lang=EN-US>md5</span><span
+style='font-family:宋体'>值作为</span><span lang=EN-US>token</span><span
+style='font-family:宋体'>，避免</span><span lang=EN-US>appid</span><span
+style='font-family:宋体'>之间冲突。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>3</span><span style='font-family:宋体'>、将另外写个使用</span><span
+lang=EN-US>josn</span><span style='font-family:宋体'>返回信息的接口，方便用户使用。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=right style='text-align:right'><span lang=EN-US>2014/10/11</span></p>
+
+</div>
+
+</body>
+
+</html>

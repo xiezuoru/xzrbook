@@ -1,0 +1,44 @@
+<html>
+<head><title>s4a和web的交互——测试</title>
+<meta http-equiv="Content-Language" content="zh-cn">
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<script type="text/javascript">
+function loadXMLDoc(url,s4aid)
+{
+var s4aurl="http://"+ s4aip.value +":42001/";
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+	var str=xmlhttp.responseText;
+	document.getElementById("myDiv").innerHTML=str;
+    }
+	else
+	{document.getElementById("myDiv").innerHTML='scratch还没有“允许远程传感器连接”！';}
+  }
+xmlhttp.open("GET",s4aurl + url,true);
+xmlhttp.send();
+}
+</script>
+</head>
+<body>
+<div id="myDiv"><h2>请在“侦测”中点击右键，选择“允许远程传感器连接”</h2></div>
+<hr>
+输入你要连接的s4a服务器ip：<input id="s4aip" name="s4aip" type="text" value="192.168.1.102">
+<hr>
+<div id="linklist"><button type="button" onclick="loadXMLDoc('',1)">测试s4a是否“允许远程传感器连接”</button></div>
+<div id="s4a_gb"><button type="button" onclick="loadXMLDoc('?send-messages',2)">列出所有广播事件</button><div id="gblist"></div></div>
+<div id="s4a_bl"><button type="button" onclick="loadXMLDoc('?send-vars',3)">列出所有变量</button><div id="bllist"></div></div>
+<hr>
+广播名称和变量名称请不要用中文！
+</body>
+</html>

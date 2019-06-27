@@ -1,0 +1,25 @@
+Dim httpd
+Shell.Service.RunService "NBWeb", "NetBox Web Server", "NetBox Http Server Sample"
+Sub OnServiceStart()
+    Set httpd = CreateObject("NetBox.HttpServer")
+    If httpd.Create("", 88) = 0 Then
+        Set host = httpd.AddHost("", "\s4a")
+        host.EnableScript = true
+        host.AddDefault "index.htm"
+        httpd.Start
+    else
+        Shell.Quit 0
+    end if
+End Sub
+
+Sub OnServiceStop()
+    httpd.Close
+End Sub
+
+Sub OnServicePause()
+    httpd.Stop
+End Sub
+
+Sub OnServiceResume()
+    httpd.Start
+End Sub
