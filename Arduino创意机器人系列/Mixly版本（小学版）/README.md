@@ -12,4 +12,4 @@ ISBN：9787115452412
 
 资源链接：
 
-链接:https://pan.baidu.com/s/1h3XTpeROSw0jFRR4BLCL2w  密码:yz6w
+链接:https://pan.baidu.com/s/1h3XTpeROSw0jFRR4BLCL2w 提取码:yz6w
