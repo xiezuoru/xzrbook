@@ -9,5 +9,8 @@
 	2019.4启动，2019.6发布第一个版本。
 
 
+## 下载方法
 
+如果不会使用GitHub的客户端，请访问国内镜像（码云），在页面中找“克隆下载”。
+https://gitee.com/xiezuoru/xzrbook/tree/master/%E5%90%84%E7%A7%8D%E4%B9%A6%E7%B1%8D%E7%9A%84%E9%85%8D%E5%A5%97%E8%B5%84%E6%BA%90/%E8%B7%9F%E6%88%91%E5%AD%A6App%20inventor2
 
