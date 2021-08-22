@@ -1,0 +1,30 @@
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <title>课堂答题器设置工具</title>
+            <link rel="icon" href="data:;base64,=">
+</head>
+<body class="c">
+        <form action="http://127.0.0.1:8080/real_ans" method="post" enctype="" target="result">
+          <div>1.设置正确答案</div>
+            <label for="tag" class="card w-100">答案</label>
+            <input type="text" name="r_ans" class="card w-100" value="A">
+            <input type="submit" value="设置" class="btn primary">
+        </form>
+        <div>2.清除当前答题情况</div>
+        <p><a href="http://127.0.0.1:8080/clear_all_ans" target="result">操作</a></p>
+        <div>3.查看答题情况</div>
+        <p><a href="http://127.0.0.1:8080/get_stu_ans" target="result">查看</a></p>
+        <form action="http://127.0.0.1:8080/post_ans" method="post" enctype="" target="result">
+          <div>4.答案提交测试</div>
+            <label for="tag" class="card w-100">学生</label>
+            <input type="text" name="stu" class="card w-100" value="TEST">
+            <label for="tag" class="card w-100">答案</label>
+            <input type="text" name="ans" class="card w-100" value="A">
+            <input type="submit" value="提交" class="btn primary">
+        </form>
+        <div class="row">
+            <iframe name="result" frameborder="0" scrolling="no" src=""></iframe>
+        </div>
+        </body></html>

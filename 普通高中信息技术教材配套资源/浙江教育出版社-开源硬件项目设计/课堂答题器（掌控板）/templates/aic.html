@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+
+		<title>Answer in Class</title>
+	</head>
+	<body >
+		<p id=count></p>
+		<p id=res></p>
+		<script type="text/javascript">
+			var host="http://"+window.location.host;
+			setInterval(refresh, 1000);
+			function refresh(){
+				var html_str='';
+				$.ajax({
+					type:"get",
+					url:host+"/get_ans_count",
+					async:true,
+					success: function(data,status){
+						data=JSON.parse(data);
+						var a_count=data.data.A;
+						var b_count=data.data.B;
+						var c_count=data.data.C;
+						var d_count=data.data.D;
+						var total_count=data.total;
+						html_str+='<table border="1" width="100%"><tr><td>答题人数</td><td>A</td><td>B</td><td>C</td>';
+						html_str+='<td>D</td></tr><td>'+total_count.toString()+'</td><td>'+a_count.toString()+'</td>';
+						html_str+='<td>'+b_count.toString()+'</td><td>'+c_count.toString()+'</td><td>'+d_count.toString()+'</td></tr>';
+						html_str+='</table>';
+						$("#count").html(html_str);
+					}
+				});
+				$.ajax({
+					type:"get",
+					url:host+"/get_stu_ans",
+					async:true,
+					success: function(data,status){
+						data=JSON.parse(data);
+						var length=data.data_length;
+						$("#res").html("");
+						for(var i=0;i<length;i++){
+							stu_ans=data.data[i];
+							console.log(stu_ans);
+							stu=stu_ans.STU;
+							ans=stu_ans.ANS;
+							$("#res").append(stu+':'+ans+'<br/>');
+							
+							
+						}
+					}
+				});
+			}
+		</script>
+	</body>
+</html>
