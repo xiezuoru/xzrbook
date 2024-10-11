@@ -16,7 +16,6 @@
 
 部分案例提供了项目地址。
 
-
 摄像头识别心率
 
 地址：https://openxlab.org.cn/apps/detail/nurse1/rppg_heartrate_estimate
@@ -52,7 +51,3 @@
 用BaseML探究非线性传感器数据变化规律
 
 地址：https://www.openinnolab.org.cn/pjlab/project?id=66dec6048034227b8a98630a
-
-
-
-
