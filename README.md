@@ -41,5 +41,5 @@
 
 ## 其他资源
 
-各种发表的文章，见：
+各种发表的文章，见：https://github.com/xiezuoru/xzr-articles
 
